@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Forever Valentine 💖</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #fce4ec, #f8bbd0);
+            color: #880e4f;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 720px;
+            margin: auto;
+        }
+        h1 {
+            color: #c2185b;
+            font-size: 2.8em;
+            margin: 20px 0;
+        }
+        .intro {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            color: #ad1457;
+        }
+        .day {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border: 1px solid #f8bbd0;
+        }
+        .locked {
+            background: #ffebee;
+            opacity: 0.8;
+        }
+        .photo {
+            max-width: 100%;
+            border-radius: 14px;
+            margin: 20px 0;
+        }
+        button {
+            background: #f06292;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .content {
+            display: none;
+        }
+        .revealed .content {
+            display: block;
+        }
+        .status {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 24px;
+            animation: floatUp 6s linear infinite;
+            color: #e91e63;
+            opacity: 0.8;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity:1; }
+            100% { transform: translateY(-110vh) scale(1.5); opacity:0; }
+        }
+        #lockScreen {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        #lockScreen input {
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 280px;
+            max-width: 90%;
+            margin: 15px 0;
+        }
+        #error {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+        footer {
+            margin-top: 60px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+<!-- PASSWORD LOCK SCREEN -->
+<div id="lockScreen">
+    <h2 style="color:#c2185b">Enter the secret ❤️</h2>
+    <input id="passwordInput" type="password" placeholder="Hint: who loves you most 😉">
+    <button onclick="checkPassword()">Unlock 💖</button>
+    <p id="error">Wrong password 😝 Try again!</p>
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container" id="mainContent" style="display:none;">
+    <h1>Valentine's Surprise for My ❤️</h1>
+    <p class="intro">Each day unlocks a surprise just for you 💕</p>
+
+    <!-- Day 1 -->
+    <div class="day" id="day1">
+        <h2>February 7 – Rose Day 🌹</h2>
+        <p class="status">Checking date...</p>
+        <button id="btn1" disabled>Locked 🔒</button>
+        <div class="content">
+            <img src="https://i.postimg.cc/hXT6FCLW/Whats-App-Image-2026-02-05-at-22-30-02-(2).jpg" class="photo">
+            <p>You always know how to make me smile with little things like this. You're my favorite kind of sweet 🌹❤️</p>
+            <p>Idhigo puvvu nuvvey na love uuuuuu 🌹💕🥰😘</p>
+        </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day" id="day2">
+        <h2>February 8 – Propose Day 💍</h2>
+        <p class="status">Checking date...</p>
+        <button id="btn2" disabled>Locked 🔒</button>
+        <div class="content">
+            <img src="https://i.postimg.cc/MnVNksyr/Whats-App-Image-2026-02-05-at-22-30-01-(1).jpg" class="photo">
+            <p>If I had to choose again, it'd be you every single time. Forever starts with us 💍✨</p>
+            <p>Bokka niku propose chesi, nak telidhu em chesthavoo nannu pelli chesuko chaluuu 💍😍🥹💞</p>
+        </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day" id="day3">
+        <h2>February 9 – Chocolate Day 🍫</h2>
+        <p class="status">Checking date...</p>
+        <button id="btn3" disabled>Locked 🔒</button>
+        <div class="content">
+            <img src="https://i.postimg.cc/LJLwdyzG/Whats-App-Image-2026-02-05-at-22-30-01.jpg" class="photo">
+            <p>You're sweeter than any chocolate and make every day feel like a treat 🍫😘</p>
+            <p>Na nalla bangaramm okka chocolate konnivachu kada enni sarlu adukovali ninnuuu 🍫🥺😭<br>Nak endhuku cheppu chocolate day nuvvey chocolate la unnav ninney korukoni thintaa 😂🍫😋💕</p>
+        </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day" id="day4">
+        <h2>February 10 – Teddy Day 🧸</h2>
+        <p class="status">Checking date...</p>
+        <button id="btn4" disabled>Locked 🔒</button>
+        <div class="content">
+            <img src="https://i.postimg.cc/SnC30Z6h/Whats-App-Image-2026-02-05-at-22-30-03.jpg" class="photo">
+            <p>Your hugs are the coziest place in the world. My big teddy bear forever 🧸🤗</p>
+            <p>Nuvvey na teddy bear, ninnu hug chesukoni padukunta antha soft ga untav kani konni years ki gattiga ayyipothav gym chestunav nuvuuu 😭🧸<br>Kani nuvvu teddy la unte cute uuu ga untavvv 🐼💕🥰</p>
+        </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day" id="day5">
+        <h2>February 11 – Promise Day 🤝</h2>
+        <p class="status">Checking date...</p>
+        <button id="btn5" disabled>Locked 🔒</button>
+        <div class="content">
+            <img src="https://i.postimg.cc/750dvBgK/Whats-App-Image-2026-02-05-at-22-30-00.jpg" class="photo">
+            <p>Happy Valentine's Day to the best part of my life. Thank you for being mine. I love you more every day 🎀❤️</p>
+            <p>Promise day niku endhuku cheppu promise veyavu pettavu, okkavela vesina kani tappinchukuntav bot gaaaaaaa 😤🤝😂💔</p>
+        </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day" id="day6">
+        <h2>February 12 – Hug Day 🤗</h2>
+        <p class="status">Checking date...</p>
+        <button id="btn6" disabled>Locked 🔒</button>
+        <div class="content">
+            <img src="https://i.postimg.cc/NKmShN1z/Whats-App-Image-2026-02-05-at-22-30-01-(2).jpg" class="photo">
+            <p>Your energy + your hugs = instant happiness. Can't wait to hold you close 🤗❤️</p>
+            <p>Ninnu ala hug chesukoni unte bale untadhi appudu anni marchipotha nenuu 🤗🥰💕<br>Yeppudaina nenu yedustunnapudu nannu adagakunda hug chesukoo... hug chesukona ani adagaku, vadhu aney chepthaaaaa 😭🤗💖</p>
+        </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day" id="day7">
+        <h2>February 13 – Kiss Day 💋</h2>
+        <p class="status">Checking date...</p>
+        <button id="btn7" disabled>Locked 🔒</button>
+        <div class="content">
+            <img src="https://i.postimg.cc/ZWp2kfrg/Whats-App-Image-2026-02-05-at-22-30-02-(1).jpg" class="photo">
+            <p>Your smile still makes my heart skip. Every kiss feels like the first 💋😍</p>
+            <p>Kiss ante gurtu vachedhi 1st kiss its a memorable kisss 💋🥹💕<br>Kiss lo matram nuvvey thop ra babuuuuuuu 😘🔥💖</p>
+        </div>
+    </div>
+
+    <!-- Day 8 -->
+    <div class="day" id="day8">
+        <h2>February 14 – Valentine's Day ❤️</h2>
+        <p class="status">Checking date...</p>
+        <button id="btn8" disabled>Locked 🔒</button>
+        <div class="content">
+            <img src="https://i.postimg.cc/RWKyrP7x/Whats-App-Image-2026-02-05-at-22-30-02.jpg" class="photo">
+            <p>I promise to love you through every adventure and quiet moment. You're my everything 🤝💞</p>
+            <p>Happy valentine day kadhu kadhu WILL U BE MY VALENTINE? 😍💖🥰<br>Niku ivvani cheppi bokka telusaa last lo ivvani endhuke nak nachavu antav, nibbi la cheyaku antavv kani ivvey happiness isthayy makuuuuu 💕😭 I LOVE U NALLA BANGARAM 💞🌹</p>
+        </div>
+    </div>
+
+    <footer>Made with endless love 💕</footer>
+</div>
+
+<script>
+// ================== PASSWORD CHECK ==================
+function checkPassword() {
+    const input = document.getElementById("passwordInput").value.trim();
+    if (input === "reels") {
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+        document.getElementById("bgMusic").play().catch(() => {});
+        startHearts();
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
+}
+
+// ================== FLOATING HEARTS ==================
+function startHearts() {
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+    }, 400);
+}
+
+// ================== DAY UNLOCK LOGIC ==================
+const days = [
+    { id:1, date: new Date('2026-02-07T00:00:00') },
+    { id:2, date: new Date('2026-02-08T00:00:00') },
+    { id:3, date: new Date('2026-02-09T00:00:00') },
+    { id:4, date: new Date('2026-02-10T00:00:00') },
+    { id:5, date: new Date('2026-02-11T00:00:00') },
+    { id:6, date: new Date('2026-02-12T00:00:00') },
+    { id:7, date: new Date('2026-02-13T00:00:00') },
+    { id:8, date: new Date('2026-02-14T00:00:00') }
+];
+
+const now = new Date();
+
+days.forEach(day => {
+    const dayEl = document.getElementById(`day${day.id}`);
+    const btn = document.getElementById(`btn${day.id}`);
+    const status = dayEl.querySelector('.status');
+
+    if (now >= day.date) {
+        status.textContent = "Ready! 💖";
+        btn.disabled = false;
+        btn.textContent = "Reveal 💖";
+        btn.onclick = () => {
+            dayEl.classList.add("revealed");
+            btn.style.display = "none";
+            localStorage.setItem(`revealed${day.id}`, "true");
+        };
+    } else {
+        status.textContent = `Unlocks on ${day.date.toDateString()}`;
+        btn.disabled = true;
+        btn.textContent = "Locked 🔒";
+    }
+
+    // Restore if already revealed
+    if (localStorage.getItem(`revealed${day.id}`) === "true") {
+        dayEl.classList.add("revealed");
+        btn.style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
